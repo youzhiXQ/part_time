@@ -30,9 +30,9 @@ public class CodeDOM {
     /**
      * 数据连接相关
      */
-    private static final String URL = "jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&characterEncoding=utf-8";
+    private static final String URL = "jdbc:mysql://localhost:3306/part_time_job?serverTimezone=GMT%2B8&characterEncoding=utf-8";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "sasa";
     private static final String DRIVER_CLASSNAME = "com.mysql.jdbc.Driver";
     /**
      * 表名
@@ -90,7 +90,7 @@ public class CodeDOM {
         stringBuffer.append(
                 "package " + package_.replaceAll("\\\\", ".") + "vo;\n" +
                         "\n" +
-                        "import "+ basePackage_.replaceAll("\\\\", ".") +" common.pojo.PageCondition;"+
+                        "import " + basePackage_.replaceAll("\\\\", ".") + " common.pojo.PageCondition;" +
                         "import lombok.Data;\n" +
                         "import java.io.Serializable;\n" +
                         "import java.util.Date;\n" +
@@ -528,11 +528,11 @@ public class CodeDOM {
         return tableName + " 后台代码生成完毕！";
     }
 
-//    public static void main(String[] args) {
-//        String[] tables = {"sys_user","sys_menu","sys_authority","sys_user_menu","sys_user_authority","sys_shortcut_menu","sys_setting"};
-//        for (String table : tables) {
-//            String msg = new CodeDOM(table).create();
-//            System.out.println(msg);
-//        }
-//    }
+    public static void main(String[] args) {
+        String[] tables = {"sys_merchant", "sys_parttime"};
+        for (String table : tables) {
+            String msg = new CodeDOM(table).create();
+            System.out.println(msg);
+        }
+    }
 }
