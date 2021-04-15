@@ -16,8 +16,7 @@ public class SysParttimeController extends CommonController<SysParttimeVo, SysPa
 
 
     @GetMapping("parttime")
-    public ModelAndView parttime(){
+    public ModelAndView merchant(){
         return new ModelAndView("sys/parttime/parttime");
     }
-
 }

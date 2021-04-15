@@ -18,7 +18,7 @@ public class SysMerchantVo extends PageCondition implements Serializable {
 
     private String merchantJob;//
 
-    private Integer merchantMobile;//
+    private String merchantMobile;//
 
     private String merchantName;//
 

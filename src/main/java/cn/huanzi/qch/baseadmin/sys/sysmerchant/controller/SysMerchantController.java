@@ -14,9 +14,12 @@ public class SysMerchantController extends CommonController<SysMerchantVo, SysMe
     @Autowired
     private SysMerchantService sysMerchantService;
 
+
     @GetMapping("merchant")
     public ModelAndView merchant(){
         return new ModelAndView("sys/merchant/merchant");
     }
+
+
 
 }
