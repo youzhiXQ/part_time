@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--解决idea thymeleaf 表达式模板报红波浪线-->
+<!--suppress ALL -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 引入公用部分 -->
+    <script th:replace="common/head::static"></script>
+    <!-- 样式 -->
+    <link th:href="@{/sys/job/css/job.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="layui-row layui-col-space15">
+    <!-- 树 -->
+    <div class="layui-col-md6">
+        <div class="layui-card">
+            <div class="layui-card-header">兼职列表</div>
+            <div class="layui-card-body">
+                <!-- 表格主体 -->
+                <table class="layui-hide" id="jobTable" lay-filter="test"></table>
+                <!-- 模板 -->
+                <script type="text/html" id="jobTableToolbarDemo">
+                    <div class="layui-btn-container">
+                        <button class="layui-btn layui-btn-sm" lay-event="addData">新增</button>
+                        <input type="text" id="queryByJobName" name="queryByJobName" autocomplete="off"
+                               placeholder="请输入商家名称" class="layui-input layui-btn-sm">
+                        <button class="layui-btn layui-btn-sm" lay-event="query">查询</button>
+                    </div>
+                </script>
+                <script type="text/html" id="jobTableBarDemo">
+                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- 操作表单 -->
+    <div class="layui-col-md6">
+        <div class="layui-card">
+            <div class="layui-card-header">操作表单</div>
+            <div class="layui-card-body">
+                <form id="jobForm" class="layui-form layui-form-pane">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobPosition" autocomplete="off" placeholder="职位"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <!--<div class="layui-form-item">
+                        <label class="layui-form-label">商家</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobName" autocomplete="off" placeholder="姓名"
+                                   class="layui-input">
+                        </div>
+                    </div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">时间/工资</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobTimeMoney" autocomplete="off" placeholder="时间/工资"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商家</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobMerchant" autocomplete="off" placeholder="商家"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">人数</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobNumber" autocomplete="off" placeholder="人数"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">公司地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobAddress" autocomplete="off" placeholder="公司地址"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">简介</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="jobDescrrpt" autocomplete="off" placeholder="简介"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <a class="layui-btn" onclick="jobFormSave()">保存</a>
+                        </div>
+                    </div>
+                    <!-- 隐藏域 -->
+                    <input type="text" name="jobId" hidden="hidden"/>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- js -->
+<script th:src="@{/sys/job/js/job.js}"></script>
+</html>

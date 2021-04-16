@@ -529,7 +529,7 @@ public class CodeDOM {
     }
 
     public static void main(String[] args) {
-        String[] tables = {"sys_merchant", "sys_parttime"};
+        String[] tables = {"sys_job"};
         for (String table : tables) {
             String msg = new CodeDOM(table).create();
             System.out.println(msg);
